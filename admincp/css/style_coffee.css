@@ -1,0 +1,219 @@
+body {
+	background: #BEB7A9 url('../images/coffee_bg.gif') repeat-y top left;
+}
+
+
+
+
+#sidebar {
+	background: none;
+	border-right: 1px solid #D0C9BB;
+}
+
+.logo { background: url('../images/coffee_bg_logo.gif') repeat-x top left; }
+.top_nav { background: url('../images/coffee_bg_header.gif') repeat-x top left; }
+
+.title a { color: #575247; }
+.session { color: #766E5F; }
+.session a { color: #989F30; }
+
+#navigation a { color: #FFF; }
+#navigation a:hover { color: #D1CABB; }
+#navigation a:active { color: #900; }
+#navigation a:focus { color: #00C; }
+
+
+.navhead, .navhead_blank {
+	background: #867E6E url('../images/coffee_bg_navhead.gif') repeat-x top left;
+	border: 1px solid #8A8271;
+	color: #FFF; font-weight:bold; font-size:14px;
+}
+	.navhead:hover, .navhead_blank:hover { border: 1px solid #9B9280; }
+
+.subnav {
+	background: #69655B;
+}
+
+.navbullet {
+	background: url('../images/coffee_navbullet.png') no-repeat;
+}
+
+.submenu li a { border-bottom: 1px solid #757168 }
+
+.submenu li a.active { color:#009 !important ; font-weight:bold; color:#006;}
+
+#copyrights {
+	background: #615C52 url('../images/coffee_splash.gif') no-repeat 8px;
+	color: #807A6F;
+}
+#copyrights a { color: #807A6F; }
+
+
+
+#content {
+	background: #C5BEB2;
+}
+	.box {
+		background: #fff url('../images/bg_box.gif') repeat-x top left;
+		border: 1px solid #fff;
+	}
+	
+tbody tr:hover td { background: #FDF9F3; }
+
+/* Code & Pre */
+
+code,
+pre {
+	border-left: 4px solid #C5BEB2;
+}
+
+/* Forms */
+
+.submit:hover,
+.button:hover {
+	color: #70A235;
+}
+
+/* Pagination */
+/* Class .current is used to mark current page; */
+
+.paginator li a:hover, .paginator li.current a {
+	color: #545454;
+	border: 1px solid #BEB7A9;
+	background: #F2EADD;
+}
+/********* CSS Shortcut **********/
+.shortcut { background: url(../images/bg-shortcut.png) no-repeat top center; text-align: center; float: left; margin: 0 20px 20px 0; }
+.shortcut div { width: 95px; padding: 65px 0 5px 0; margin-bottom: 15px;}
+a:hover .shortcut { background: url(../images/bg-shortcut-hover.png) no-repeat top center; cursor: pointer; color: #666; }
+/********* CSS Icon **********/
+.user { background: url(../images/user-top.png) no-repeat top center; }
+.news { background: url(../images/news.png) no-repeat top center; }
+.setting { background: url(../images/setting.png) no-repeat top center; }
+.catalog { background: url(../images/catalog.png) no-repeat top center; }
+.mail { background: url(../images/mail.png) no-repeat top center; }
+.module { background: url(../images/module.png) no-repeat top center; }
+.backup { background: url(../images/backup.png) no-repeat top center; }
+.language { background: url(../images/language.png) no-repeat top center; }
+.theme { background: url(../images/theme.png) no-repeat top center; }
+.help { background: url(../images/help.png) no-repeat top center; }
+.info { background: url(../images/film.jpg) no-repeat top center; width:64; height:64 }
+.color { background: url(../images/color.png) no-repeat top center; }
+.manufacture { background: url(../images/manufacture.png) no-repeat top center; }
+.product { background: url(../images/product.png) no-repeat top center; }
+.newsletter { background: url(../images/newsletter.png) no-repeat top center; }
+.partner { background: url(../images/partner.png) no-repeat top center; }
+.order { background: url(../images/order.png) no-repeat top center; }
+.coupon { background: url(../images/coupon.png) no-repeat top center; }
+.tracker { background: url(../images/tracker.png) no-repeat top center; }
+.report { background: url(../images/report.png) no-repeat top center; }
+.payment { background: url(../images/payment.png) no-repeat top center; }
+.banner { background: url(../images/banner.png) no-repeat top center; }
+
+.home { background: url(../images/home.png) no-repeat center; }
+.preview { background: url(../images/preview.png) no-repeat center; }
+.infos { background: url(../images/infos.png) no-repeat center; }
+.message { background: url(../images/message.png) no-repeat center; }
+.helps { background: url(../images/helps.png) no-repeat center; }
+.logout { background: url(../images/logout.png) no-repeat center; }
+.bul { background: url(../images/bul.png) no-repeat right center; }
+
+.new { background: url(../images/new.png) no-repeat center 5px; }
+.edit { background: url(../images/edit1.png) no-repeat center 5px;  background-color:#8AC3D4 }
+.delete { background: url(../images/deleete.png) no-repeat center 5px; background-color:#DC6A6A }
+.save { background: url(../images/save.png) no-repeat center 5px; }
+.cancel { background: url(../images/cancel.png) no-repeat center 5px; }
+.enable { background: url(../images/enable.png) no-repeat center 5px; }
+.disable { background: url(../images/disable.png) no-repeat center 5px; }
+.print { background: url(../images/print.png) no-repeat center 5px; }
+.send { background: url(../images/send.png) no-repeat center 5px; }
+.solution { background: url(../images/image010.jpg) no-repeat center 5px; }
+.System{ background: url(../images/icon_podcasting2.gif) no-repeat center 5px; }
+.software{ background: url(../images/icon_software_market_62.gif) no-repeat center 5px; }
+.Articles{ background: url(../images/images.jpg) no-repeat center 5px; }
+.contact{ background: url(../images/23-06-2008icon_tutorial_62.gif.jpg) no-repeat center 5px; }
+.category{ background: url(../images/section.jpg) no-repeat center 5px; }
+
+/********* CSS Table List **********/
+.list { width: 100%; border-spacing: 0; border: 1px solid #eee; border-right: 0; }
+.list tr { text-align: center; }
+.list th, .list td { padding: 7px; border-right: 1px solid #eee; border-top: 1px solid #eee; }
+.list thead, .list tfoot { background: #f1f1f1; }
+.list tbody tr:hover, .list .row { background: #ffd; }
+
+/********* CSS Accordion **********/
+#accordion h3 { padding: 5px 0 5px 30px; cursor: pointer; background: #f1f1f1; border: 1px solid #ccc; font-size: 13px; color: #2488dd; font-weight: bold; }
+#accordion h3:hover { background: #e9f0e6; }
+#accordion div { border: 1px solid #d3d3d3; border-top: none; overflow: hidden; }
+#accordion div table { width: 100%; border-spacing: 0; }
+#accordion div table tr { text-align: center; }
+#accordion div table tr:hover { text-align: center; background:#FFFFCC }
+#accordion div table th { padding: 5px; background: #fafafa; border-top: 1px solid #d2d2d2; }
+#accordion div table td { padding: 5px; border-top: 1px solid #d2d2d2; }
+
+.warning {
+	
+	padding: 15px 0px;
+	margin-bottom:10px;
+	background: #FFDFE0;
+	border: 1px solid #FF9999;
+	font-size: 12px;
+	text-align: center;
+}
+
+.pagination {
+	margin-top: 30px;
+	border-top: 1px solid #EEEEEE;
+	background: #F8F8F8;
+	display: inline-block;
+	width: 100%;
+}
+.pagination .links, .pagination .results {
+	padding: 7px; 
+}
+.pagination .links {
+	float: left;
+}
+.pagination .links a {
+	border: 1px solid #CCCCCC;
+	padding: 4px 7px;
+	text-decoration: none;
+	color: #000000;
+	margin-right: 5px;
+}
+.pagination .links b {
+	border: 1px solid #CCCCCC;
+	padding: 4px 7px;
+	text-decoration: none;
+	color: #000000;
+	background: #FFFFFF;
+	margin-right: 5px;
+}
+.pagination .results {
+	float: right;
+}
+.htabs {
+	padding: 0px 0px 0px 10px;
+	height: 30px;
+	border-bottom: 1px solid #DDDDDD;
+	margin-bottom: 15px;
+}
+.htabs a {
+	border-top: 1px solid #DDDDDD;
+	border-left: 1px solid #DDDDDD;
+	border-right: 1px solid #DDDDDD;
+	background: #FFFFFF url('../images/tab.png') repeat-x;
+	padding: 6px 15px 7px 15px;
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	color: #000000;
+	margin-right: 2px;
+}
+.htabs a.selected {
+	padding-bottom: 8px;
+	background: #FFFFFF;
+}
