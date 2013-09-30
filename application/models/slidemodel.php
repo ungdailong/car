@@ -10,4 +10,16 @@ class slidemodel extends CI_Model {
 			return $query -> result_array();
 		}
 	}
+	function getByTypeLimit($type,$limit){
+		if($type != '' && $type != null){
+			$query = $this->db->query("select * from tbl_slide where hinh <> '' and hide = 'N' and type = '$type' ORDER BY RAND() LIMIT ". $limit);
+			return $query -> result_array();
+		}
+	}
+	function getByCategory($type,$categoryId){
+		if($type != '' && $type != null){
+			$query = $this->db->query("select * from tbl_slide where hinh <> '' and hide = 'N' and type = '$type' and record_id = $categoryId ORDER BY RAND()");
+			return $query -> result_array();
+		}
+	}
 }

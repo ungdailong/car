@@ -14,7 +14,8 @@ class Tuvan extends CI_Controller {
 		$offset = $page * $pagesize;
 		$data['tuvan'] = $this -> tuvanmodel -> getAll($offset,$pagesize);
 		$num = $this -> tuvanmodel -> CountRecord();
-		$data['pagination'] = Tool :: pagination($num,$pagesize,$page,'tu-van');
+		if($num > $pagesize)
+			$data['pagination'] = Tool :: pagination($num,$pagesize,$page,'tu-van');
 		$this->load->view('tuvan',$data);
 	}
 	public function chitiet($id){
@@ -32,7 +33,8 @@ class Tuvan extends CI_Controller {
 			$category_tuvan_id = $category_tuvan -> caid;
 			$data['tuvan'] = $this -> tuvanmodel -> getAllByType($category_tuvan_id,$offset,$pagesize);
 			$num = $this -> tuvanmodel -> CountRecordByType($category_tuvan_id);
-			$data['pagination'] = Tool :: pagination($num,$pagesize,$page,'tu-van/'.$type);
+			if($num > $pagesize)
+				$data['pagination'] = Tool :: pagination($num,$pagesize,$page,'tu-van/'.$type);
 			$this->load->view('tuvan',$data);
 		}
 	}

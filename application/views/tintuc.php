@@ -21,8 +21,7 @@
 
             	</ul>
 
-               <?php echo $pagination ?>
-
+				<?php if(isset($pagination)) echo $pagination ?>
            </div>
 
            <div class="clr"></div>

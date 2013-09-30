@@ -53,15 +53,21 @@ $route['xe-moi/(:any)/(:any)'] = "xemoi/typeCar/$1/$2/1";
 $route['xe-moi/(:any)'] = "xemoi/typeCar/$1/null/1";
 
 
+$route['xe-qua-su-dung'] = "xequasudung";
+$route['xe-qua-su-dung/(:num)'] = "xequasudung/index/$1";
+$route['xe-qua-su-dung/chi-tiet/(:num)'] = "xequasudung/chitiet/$1";
+
+$route['xe-qua-su-dung/(:any)/(:any)/(:num)'] = "xequasudung/typeCar/$1/$2/$3";
+$route['xe-qua-su-dung/(:any)/(:num)'] = "xequasudung/typeCar/$1/null/$2";
+$route['xe-qua-su-dung/(:any)/(:any)'] = "xequasudung/typeCar/$1/$2/1";
+$route['xe-qua-su-dung/(:any)'] = "xequasudung/typeCar/$1/null/1";
 
 
 $route['tin-tuc'] = "tintuc";
 $route['tin-tuc/(:num)'] = "tintuc/index/$1";
 $route['tin-tuc/chi-tiet/(:num)'] = "tintuc/chitiet/$1";
 
-$route['xe-qua-su-dung'] = "xequasudung";
-$route['xe-qua-su-dung/(:num)'] = "xequasudung/index/$1";
-$route['xe-qua-su-dung/chi-tiet/(:num)'] = "xequasudung/chitiet/$1";
+
 
 $route['lien-he'] = "lienhe";
 $route['khuyen-mai'] = "khuyenmai";

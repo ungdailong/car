@@ -79,7 +79,6 @@ class Tool{
 				$image_title1 = Admin::createThumbnail ( $image_title, 190, 130, "../application/static/upload/images/$type/", "../application/static/upload/images/$type/", 'small_' );
 				$row = $model :: getRecordById($_GET ['id']);
 				$img = $row ['hinh'];
-
 				unlink ( "../application/static/upload/images/$type/" . $img );
 				unlink ( "../application/static/upload/images/$type/small_" . $img );
 				if ($model::update ( $image_title, $_GET ['id'] )) {

@@ -14,7 +14,8 @@ class Tintuc extends CI_Controller {
 		$offset = $page * $pagesize;
 		$data['tintuc'] = $this -> tintucmodel -> getAll($offset,$pagesize);
 		$num = $this -> tintucmodel -> CountRecord();
-		$data['pagination'] = Tool :: pagination($num,$pagesize,$page,'tin-tuc');
+		if($num > $pagesize)
+			$data['pagination'] = Tool :: pagination($num,$pagesize,$page,'tin-tuc');
 		$this->load->view('tintuc',$data);
 	}
 	public function chitiet($id){

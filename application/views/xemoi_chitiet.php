@@ -15,9 +15,9 @@
 
               <div class="colL">
               		<h4>Màu xe</h4>
-                  <div class="color"><a href="#"><img src="images/pic/color1.png" /></a> <a href="#"><img src="images/pic/color2.png" /></a> <a href="#"><img src="images/pic/color3.png" /></a> <a href="#"><img src="images/pic/color4.png" /></a></div>
+                  <div class="color"><a href="#"><img src="<?php echo IMG_DIR?>pic/color1.png" /></a> <a href="#"><img src="<?php echo IMG_DIR?>pic/color2.png" /></a> <a href="#"><img src="<?php echo IMG_DIR?>pic/color3.png" /></a> <a href="#"><img src="<?php echo IMG_DIR?>pic/color4.png" /></a></div>
                   <h4>Màu nội thất xe</h4>
-                  <div class="color"><a href="#"><img src="images/pic/color1.png" /></a> <a href="#"><img src="images/pic/color2.png" /></a> <a href="#"><img src="images/pic/color3.png" /></a> <a href="#"><img src="images/pic/color4.png" /></a></div>
+                  <div class="color"><a href="#"><img src="<?php echo IMG_DIR?>pic/color1.png" /></a> <a href="#"><img src="<?php echo IMG_DIR?>pic/color2.png" /></a> <a href="#"><img src="<?php echo IMG_DIR?>pic/color3.png" /></a> <a href="#"><img src="<?php echo IMG_DIR?>pic/color4.png" /></a></div>
               </div>
 
               <div class="colR">
