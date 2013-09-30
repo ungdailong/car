@@ -1,0 +1,33 @@
+.coda { width: 100%; border-spacing: 0; border: 1px solid #ddd; }
+.coda thead, .coda tfoot { background: #f1f1f1; }
+.coda th { height: 30px; font-weight: bold; font-size: 14px; color: #444; border: 1px solid #ddd; padding: 5px; }
+.coda tbody tr { height: 100px; }
+.coda td { color: #444; border: 1px solid #ddd; padding: 5px; vertical-align: top; }
+.coda .no { text-decoration: blink; color: #FF0000; }
+.coda .item { border: 1px solid #eee; padding: 5px; }
+.coda label { font-weight: bold; color: #0033CC; }
+.coda a { margin-left: 5px; }
+.coda .events { position: relative; }
+.coda .events ul {
+	text-align: left;
+	position: absolute;
+	display: none;
+	z-index: 1000;
+	padding: 15px;
+	background: #E7ECF2 url(popup.png) no-repeat;
+	color: white;
+	border: 1px solid white;
+	font-size: 15px;
+	width: 200px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-border-radius: 3px;
+	list-style: none;
+	color: #444444;
+	-webkit-box-shadow: 0px 8px 8px #333;
+}
+.coda .events li { padding-bottom: 5px; }
+.coda .events li span { display: block; font-size: 12px; text-align: justify; color: #555; }
+.coda .events li span.title { font-weight: bold; color: #222; margin-bottom: 10px; }
+.coda .date_has_event { background: #ffd; }
