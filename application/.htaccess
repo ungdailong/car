@@ -1,0 +1,3 @@
+#Deny from all
+RewriteEngine on
+RewriteRule \.(css|jpeg|gif|png|js|swf)$ - [L]
