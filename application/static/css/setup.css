@@ -1,0 +1,183 @@
+@charset "utf-8";
+
+/******************************** SET UP *********************************/
+
+@font-face {
+	font-family: "CorpoA";  
+	src: url( 'fonts/CorpoA_Regular.eot' );
+	src: url('fonts/CorpoA_Regular.eot?#iefix') format('embedded-opentype'), url('fonts/CorpoA_Regular.woff') format('woff'), url('fonts/CorpoA_Regular.ttf') format('truetype'), url('fonts/CorpoA_Regular.svg') format('svg');
+ 
+}
+
+body {
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #333333;
+    direction: ltr;
+    font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+    font-size: 11px;
+    text-align: left;
+    unicode-bidi: embed;
+}
+
+body, h1, h2, h3, h4, h5, from, ul, li, input, select, textarea, from, dl, dd, dt { 
+	margin:0; 
+	padding:0
+}
+h1, h2, h3, h4 { 
+	
+}
+h4 { font-size:11px}
+li { list-style:none}
+
+.fl { float:left}
+.fr { float:right}
+.fn { float:none}
+.clr { clear:both}
+
+table { border-collapse:collapse}
+
+.fixed:after { content: "."; display: block; clear: both; height: 0; visibility: hidden; }
+.fixed { display: block; min-height: 1%; }
+*html .fixed { height: 1%; }
+
+
+/********************************* A **************************************/
+a { text-decoration:none}
+a:hover { text-decoration:underline}
+a:focus { outline-color:-moz-use-text-color; outline-style:none; outline-width:0; outline: none; }
+a.under { text-decoration:underline}
+a.under:hover { text-decoration:none}
+a.nounder { text-decoration:none}
+a.nounder:hover { text-decoration:none}
+
+/********************************* LINE ************************************/
+hr { clear:both; width:99.8%; color:#fff; border-top:1px solid #e6e3e3; border-left:1px solid #fff; border-right:1px solid #fff; border-left:0; border-right:0; padding:0; margin:0; line-height:1%}
+
+/********************************* FROM - INPUT - SELECT - TEXTAREA ***********************/
+
+input {vertical-align:top; margin:0; padding:0;}
+input, select, textarea {
+	font:normal 12px arial;
+	color:#8a8a8a;
+}
+
+/********************************* DISPLAY *********************************/
+.disBlock { display:block}
+.disInline { display:inline}
+.disNone { display:none}
+.lineHeight { line-height:18px}
+.letterSpacing { letter-spacing:1px}
+.overFlowX { overflow-x:hidden; overflow-y:scroll;}
+.overFlowY { overflow-y:hidden; overflow-x:scroll;}
+.overFlowH { overflow:hidden;}
+
+
+/********************************* IMG *************************************/
+img { border:0}
+img.imgLeft { float:left; margin:0 8px 8px 0}
+img.imgRight { float:right; margin:0 0 8px 8px}
+img.imgClr { clear:both}
+img.borImg { border:1px solid #e5e5e5; padding:1px}
+
+/********************************* TEXT ***********************************/
+
+.fss{font-size: 9px}
+.fsm{font-size: 11px}
+.fsl{font-size: 13px}
+.fsxl{font-size: 16px}
+.fsxxl{font-size: 18px}
+.fwn{font-weight:normal}
+.fwb{font-weight:bold}
+.fcb{color:#333}
+.fcg{color:#808080}
+
+.wordwrap {
+	white-space: pre-wrap; /* css-3 */
+	white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+	white-space: -pre-wrap; /* Opera 4-6 */
+	white-space: -o-pre-wrap; /* Opera 7 */
+	word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+/********************************* PADDING - MARGIN ***********************/
+
+.pas{padding:5px}
+.pam{padding:10px}
+.pal{padding:20px}
+.pts{padding-top:5px}
+.ptm{padding-top:10px}
+.ptl{padding-top:20px}
+.prs{padding-right:5px}
+.prm{padding-right:10px}
+.prl{padding-right:20px}
+.pbs{padding-bottom:5px}
+.pbm{padding-bottom:10px}
+.pbl{padding-bottom:20px}
+.pls{padding-left:5px}
+.plm{padding-left:10px}
+.pll{padding-left:20px}
+.phs{padding-left:5px;padding-right:5px}
+.phm{padding-left:10px;padding-right:10px}
+.phl{padding-left:20px;padding-right:20px}
+.pvs{padding-top:5px;padding-bottom:5px}
+.pvm{padding-top:10px;padding-bottom:10px}
+.pvl{padding-top:20px;padding-bottom:20px}
+.mas{margin:5px}
+.mam{margin:10px}
+.mal{margin:20px}
+.mts{margin-top:5px}
+.mtm{margin-top:10px}
+.mtl{margin-top:20px}
+.mrs{margin-right:5px}
+.mrm{margin-right:10px}
+.mrl{margin-right:20px}
+.mbs{margin-bottom:5px}
+.mbm{margin-bottom:10px}
+.mbl{margin-bottom:20px}
+.mls{margin-left:5px}
+.mlm{margin-left:10px}
+.mll{margin-left:20px}
+.mhs{margin-left:5px;margin-right:5px}
+.mhm{margin-left:10px;margin-right:10px}
+.mhl{margin-left:20px;margin-right:20px}
+.mvs{margin-top:5px;margin-bottom:5px}
+.mvm{margin-top:10px;margin-bottom:10px}
+.mvl{margin-top:20px;margin-bottom:20px}
+
+.noMar { margin:0px !important}
+
+.space { clear:both; padding:5px 0 0 0}
+.space2 { clear:both; padding:25px 0 0 0}
+
+
+/********************************* ALIGN **********************************/
+.alr { text-align:right!important}
+.all { text-align:left!important}
+.alc { text-align:center!important}
+.alj { text-align:justify!important}
+
+/********************************* COLOR **********************************/
+.white { color:#fff}
+.black { color:#000}
+.red { color:#fc0d1a}
+.green { color:#34ab93}
+.blue { color:#4678b1}
+.pink { color:#ff4695}
+.organ { color:#f66b19}
+.violet { color:#af2073 } 
+.gray1 { color:#333}
+.gray2 { color:#666}
+.gray3 { color:#999}
+.gray4 { color:#CCC}
+
+/********************************* BORDER *********************************/
+
+.borRadius {
+	 order-radius:5px; 
+	 -moz-border-radius: 5px; 
+	 -webkit-border-radius: 5px;	
+}
+
+
+
+
