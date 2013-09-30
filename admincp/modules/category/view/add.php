@@ -51,14 +51,15 @@ if (!defined('DIR_APP'))
                     <tr>
 						<td>Slides</td>
 						<td width="200"><input id="file_upload" name="file_upload" type="file" multiple="true">
-							<p style='float:right;margin-right : 200px;margin-top : -36px'><a class = "button" href="javascript:$('#file_upload').uploadify('upload','*')">Tải lên</a></p>
+							<p id = 'p-button-image'style='display : none;float:right;margin-right : 200px;margin-top : -36px'><a class = "button" href="javascript:$('#file_upload').uploadify('upload','*')">Tải lên</a></p>
+							<input type="hidden" id = "id_slide_delete" name="id_slide_delete" value="">
 							<ul>
 								<?php foreach ($slide as $key => $value){?>
-								<li>
+								<li id="slide_<?php echo $value['id']?>" style="list-style: none">
 									<img width="80px" height="80px" src = "<?php echo _path_image.'slider/small_'.$value['hinh']?>">
 									<input type="hidden" name = "id_image<?php echo $key?>" value="<?php echo $value['id']?>">
 									<input type="file" name="image<?php echo $key?>" size="30" />
-									<a class="delete" onclick="remove_slide('slider/remove/<?php echo $value['id']?>', 'Are you sure delete ?')"style="cursor: pointer;float:right"> <span>Delete</span>
+									<a class="delete" onclick="remove_slide('<?php echo $value['id']?>', 'Are you sure delete ?')"style="cursor: pointer;float:right;margin-top : 27px;margin-right : 200px"> <span>Delete</span>
 						</a>
 								</li>
 								<?php }?>
@@ -81,12 +82,13 @@ if (!defined('DIR_APP'))
 </div> <!-- END Box-->
 
 <script type="text/javascript">
-function remove_slide(href,title)
-{ //alert(href);
+function remove_slide(slideid,title)
+{
     if(confirm(title)) {
-    	//document.myform.action = href;
-    	//document.myform.submit();
-
+		$('#slide_' + slideid).hide();
+		var idOld = $('#id_slide_delete').val();
+		var idNew = idOld + ',' + slideid;
+		$('#id_slide_delete').val(idNew);
     	return true;
     }
     else {
@@ -102,10 +104,18 @@ function remove_slide(href,title)
 			'auto'     : false,
 			'swf'      : 'js/uploadify/uploadify.swf',
 			'uploader' : '<?php echo BASE_NAME?>admincp/uploadify.php',
+			'onSelect' : function() {
+				$('#p-button-image').show();
+				$('.uploadify-queue-item .cancel a').click(function(){
+					if($('.uploadify-queue-item').length == 1)
+						$('#p-button-image').hide();
+				})
+	        },
 			'onUploadSuccess' : function(file, data, response) {
-	            alert('Upload thành công');
-	            window.location = location.href;
+				$('#p-button-image').hide();
+	            alert('Upload thành công,hãy Save lại để thấy thay đổi');
 	        }
 		});
+
 	});
 </script>

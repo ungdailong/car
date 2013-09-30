@@ -31,6 +31,15 @@ class ModelSlider {
     		return $res;
     	}
     }
+    function delete($arrID){
+		if($arrID != '' && $arrID != null){
+			$sql = "Select hinh From #__slide Where id IN (" . $arrID . ")";
+			$images = $this->row($sql);
+			$sql = "Delete From #__slide Where id IN (" . $arrID . ")";
+			$res = $this->row($sql);
+			return $images;
+		}
+    }
 }
 
 ?>

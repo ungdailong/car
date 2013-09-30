@@ -10,6 +10,7 @@ class Category extends Module {
         $this->lang('news');
         $this->lang('user');
         $this->model($_GET['p'] . '/model/query');
+        $this->model('slider/model/query');
     }
 
     function index() {
@@ -87,7 +88,14 @@ class Category extends Module {
             if (empty($name)) {
                 $_SESSION['message'] = LANG_REQUIRE;
             } else {
-
+				if($_POST['id_slide_delete'] != ''){
+					$id_slide_delete = ltrim($_POST['id_slide_delete'],',');
+					$images = ModelSlider::delete($id_slide_delete);
+					foreach ($images as $index => $one){
+						unlink( "../application/static/upload/images/slider/" . $one);
+						unlink( "../application/static/upload/images/slider/small_" . $one);
+					}
+				}
             	foreach ($_FILES as $key => $value){
             		if($value['name'] != '' && $value['name'] != null){
             			$imga = $value ['type'];
