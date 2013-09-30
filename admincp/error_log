@@ -1,0 +1,9 @@
+[27-Jun-2013 14:35:19 Asia/Bangkok] PHP Notice:  Undefined variable: image_title in /home/dealduli/public_html/admincp/modules/tour/controller/tour.php on line 74
+[27-Jun-2013 14:35:19 Asia/Bangkok] PHP Notice:  Undefined variable: point_to in /home/dealduli/public_html/admincp/modules/tour/model/query.php on line 18
+[27-Jun-2013 14:39:40 Asia/Bangkok] PHP Warning:  unlink(../upload/tour/) [<a href='function.unlink'>function.unlink</a>]: Is a directory in /home/dealduli/public_html/admincp/modules/tour/controller/tour.php on line 104
+[27-Jun-2013 14:39:40 Asia/Bangkok] PHP Warning:  unlink(../upload/tour/small_) [<a href='function.unlink'>function.unlink</a>]: No such file or directory in /home/dealduli/public_html/admincp/modules/tour/controller/tour.php on line 105
+[09-Jul-2013 11:10:39 Asia/Bangkok] PHP Notice:  Undefined variable: image_title in /home/dealduli/public_html/admincp/modules/tour/controller/tour.php on line 74
+[09-Jul-2013 11:25:59 Asia/Bangkok] PHP Notice:  Undefined variable: image_title in /home/dealduli/public_html/admincp/modules/tour/controller/tour.php on line 74
+[09-Jul-2013 12:00:12 Asia/Bangkok] PHP Notice:  Undefined variable: image_title in /home/dealduli/public_html/admincp/modules/tour/controller/tour.php on line 74
+[09-Jul-2013 15:00:35 Asia/Bangkok] PHP Notice:  Undefined variable: image_title in /home/dealduli/public_html/admincp/modules/tour/controller/tour.php on line 74
+[09-Jul-2013 15:24:53 Asia/Bangkok] PHP Notice:  Undefined variable: image_title in /home/dealduli/public_html/admincp/modules/tour/controller/tour.php on line 74
