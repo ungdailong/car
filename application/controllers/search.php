@@ -13,9 +13,8 @@ class Search extends CI_Controller {
 		$data['data'] = array();
 		if($keyword != ''){
 			$data['data'] = $this -> searchmodel -> searchByKeyword($keyword);
-			$data['header_title'] = 'Century - Tìm kiếm';
 		}
-		
+		//print_r($data['data']);die();
 		$this->load->view('search',$data);
 	}
 }

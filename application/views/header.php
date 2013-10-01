@@ -55,7 +55,7 @@ $(function(){
                 </li>
                 <li><a href="<?php echo WEB_ROOT?>/lien-he"><span>Liên Hệ</span></a></li>
                 <li class="search"><i href="#" class="icoSe"></i>
-                		<ul><li><input type="text" placeholder="Tìm nhanh" /> <input type="submit" value="Tìm" /></li></ul>
+                		<ul><li><form action="search"><input type="text" name = "keyword"placeholder="Tìm nhanh" /> <input type="submit" value="Tìm" /></form></li></ul>
                 </li>
             </ul>
         </div>

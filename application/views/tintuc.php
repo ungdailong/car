@@ -8,7 +8,7 @@
             	<?php foreach ($tintuc as $index => $one){
 					$date = date('d',$one['date_create']);
 					$month = date('m',$one['date_create']);
-					$url_image = UPLOAD_IMG_DIR.'tintuc/'.$one['hinh'];
+					$url_image = UPLOAD_IMG_DIR.'tintuc/small_'.$one['hinh'];
             	?>
             		<li>
                   	<b><?php echo $date ?><i><?php echo $month ?></i></b>

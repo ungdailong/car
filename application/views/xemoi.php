@@ -13,7 +13,7 @@
 	<div class="listNews listProduct">
 		<ul>
            		<?php foreach ($cars as $index => $one) {
-           			$uri_image = UPLOAD_IMG_DIR.'cars/'.$one['hinh'];
+           			$uri_image = UPLOAD_IMG_DIR.'cars/small_'.$one['hinh'];
            		?>
             	<li>
 				<h4><?php echo $one['name']?></h4>
