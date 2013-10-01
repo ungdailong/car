@@ -7,7 +7,7 @@
 			<?php if (isset($khuyenmai -> title)) {?>
            	<h1 class="titleD"><?php echo $khuyenmai -> title ?></h1>
             	<div class="direction"><?php echo $khuyenmai -> intro?></div>
-            	<div class="contnet"><?php echo $khuyenmai -> content ?></div>
+            	<div class="contnet"><?php echo stripslashes($khuyenmai -> content) ?></div>
            </div>
            <?php }else{?>
            <h3>Chưa có thông tin nào</h3>

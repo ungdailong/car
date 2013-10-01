@@ -22,4 +22,10 @@ class slidemodel extends CI_Model {
 			return $query -> result_array();
 		}
 	}
+	function getByRecordId($type,$recordId){
+		if(intval($recordId) > 0){
+			$query = $this->db->query("select * from tbl_slide where hinh <> '' and hide = 'N' and type = '$type' and record_id = ".$recordId." ORDER BY RAND()");
+			return $query -> result_array();
+		}
+	}
 }

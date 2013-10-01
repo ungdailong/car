@@ -20,7 +20,7 @@ if (empty($_SESSION['admin_id'])) {
             <script type="text/javascript">
 				var BASE_NAME = '<?php echo BASE_NAME; ?>';
 	        </script>
-            <title>TMVCMS Control panel | TMVCMS Manager</title>
+            <title>Mercedesh Control panel | Mercedesh Manager</title>
             <!--
             Loading CSS file
             -->

@@ -8,6 +8,7 @@ class car extends Module {
 		$this->lang ( 'user' );
 		$this->model ( $_GET ['p'] . '/model/query' );
 		$this->model ( 'category' . '/model/query' );
+		$this->model ('slider/model/query');
 	}
 	function index() {
 		$rowpage = PAGE_ROWS_ADMIN;
@@ -62,11 +63,31 @@ class car extends Module {
 			if (empty ( $name )) {
 				$_SESSION ['message'] = LANG_REQUIRE;
 			} else {
+				if($_POST['id_slide_delete'] != ''){
+					$id_slide_delete = ltrim($_POST['id_slide_delete'],',');
+					$images = ModelSlider::delete($id_slide_delete);
+					foreach ($images as $index => $one){
+						unlink( "../application/static/upload/images/slider/" . $one);
+						unlink( "../application/static/upload/images/slider/small_" . $one);
+					}
+				}
 				Tool :: editImage('cars',ModelCar);
+				unset($_FILES['image']);
+				$tempId = $_GET ['id'];
+				foreach ($_FILES as $key => $value){
+            		if($value['name'] != '' && $value['name'] != null){
+            			$_GET ['id'] = $_POST['id_'.$key];
+            			$_FILES ['image'] = $value;
+            			Tool :: editImage('slider',ModelSlider);
+            		}
+            	}
+				$_GET ['id'] = $tempId;
 			}
 		}
 		$row = ModelCar :: getRecordById($_GET ['id']);
+		$row_slide = $this->rows('select * from #__slide where type = "car" and record_id = "' . $_GET['id'] . '"');
 		$data = array ();
+		$data ['slide'] = $row_slide;
 		$data ['name'] = $row ['name'];
 		$data ['price'] = $row ['price'];
 		$data ['type_car'] = $row ['type_car'];

@@ -65,7 +65,7 @@ if (!defined('DIR_APP'))
                         </td>
                     </tr>
                     <tr style="font-weight:bold">
-                        <td>Hình:</td>
+                        <td>Hình đại diện:</td>
                         <td>
                             <input type="file" name="image" size="30"  />
                             <?php if (!empty($uri)) { ?><img src="<?php echo @$uri ?>" name="<?php echo @$image_name ?>" width="80px" height="80px"/><?php } ?>
@@ -96,13 +96,21 @@ if (!defined('DIR_APP'))
                         </td>
                     </tr>
 					<tr>
-						<td>Upload</td>
-						<td>
-							<form>
-								<div id="queue"></div>
-								<input id="file_upload" name="file_upload" type="file" multiple="true">
-								<p><a href="javascript:$('#file_upload').uploadify('upload')">Upload Files</a></p>
-							</form>
+						<td>Slides</td>
+						<td width="200"><input id="file_upload" name="file_upload" type="file" multiple="true">
+							<p id = 'p-button-image'style='display : none;float:right;margin-right : 200px;margin-top : -36px'><a class = "button" href="javascript:$('#file_upload').uploadify('upload','*')">Tải lên</a></p>
+							<input type="hidden" id = "id_slide_delete" name="id_slide_delete" value="">
+							<ul>
+								<?php foreach ($slide as $key => $value){?>
+								<li id="slide_<?php echo $value['id']?>" style="list-style: none">
+									<img width="80px" height="80px" src = "<?php echo _path_image.'slider/small_'.$value['hinh']?>">
+									<input type="hidden" name = "id_image<?php echo $key?>" value="<?php echo $value['id']?>">
+									<input type="file" name="image<?php echo $key?>" size="30" />
+									<a class="delete" onclick="remove_slide('<?php echo $value['id']?>', 'Are you sure delete ?')"style="cursor: pointer;float:right;margin-top : 27px;margin-right : 200px"> <span>Delete</span>
+						</a>
+								</li>
+								<?php }?>
+							</ul>
 						</td>
 					</tr>
                 </table>
@@ -114,6 +122,19 @@ if (!defined('DIR_APP'))
 
 <script type="text/javascript">
     $.tabs('#tabs a');
+    function remove_slide(slideid,title)
+    {
+        if(confirm(title)) {
+    		$('#slide_' + slideid).hide();
+    		var idOld = $('#id_slide_delete').val();
+    		var idNew = idOld + ',' + slideid;
+    		$('#id_slide_delete').val(idNew);
+        	return true;
+        }
+        else {
+        	return false;
+        }
+    }
     CKEDITOR.replace( 'content_',
     	    {
     	        fullPage : false,
@@ -143,20 +164,31 @@ if (!defined('DIR_APP'))
 		<?php $timestamp = time();?>
 		$(function() {
 			$('#file_upload').uploadify({
-				'formData'     : {
-					'timestamp' : '<?php echo $timestamp;?>',
-					'token'     : '<?php echo md5('unique_salt' . $timestamp);?>'
-				},
+				'formData'      : {'object' : 'car','recordId' : <?php echo $_GET['id']?>},
+				'fileObjName' : 'image',
+				'fileTypeExts' : '*.gif; *.jpg; *.png',
+				'buttonText' : 'Chọn hình...',
 				'auto'     : false,
 				'swf'      : 'js/uploadify/uploadify.swf',
-				'uploader' : 'uploadify.php',
-				'itemTemplate' : '<div id="${fileID}" class="uploadify-queue-item">\
-                    <div class="cancel">\
-                        <a href="javascript:$(\'#${instanceID}\').uploadify(\'cancel\', \'${fileID}\')">X</a>\
-                    </div>\
-                    <span class="fileName">${fileName} (${fileSize})</span><span class="data"></span>\
-                    <select><option>123</option></select>\
-                </div>'
+				'uploader' : '<?php echo BASE_NAME?>admincp/uploadify.php',
+				'onSelect' : function() {
+					$('#p-button-image').show();
+					$('.uploadify-queue-item .cancel a').click(function(){
+						if($('.uploadify-queue-item').length == 1)
+							$('#p-button-image').hide();
+					})
+		        },
+				'onUploadSuccess' : function(file, data, response) {
+					var temp = 0;
+					$('#file_upload-queue .uploadify-queue-item .data').each(function(){
+						if($(this).html() == ' - Complete')
+							temp ++;
+					});
+					$('#p-button-image').hide();
+					if(temp == $('.uploadify-queue-item').length){
+						alert('Upload thành công,hãy Save lại để thấy thay đổi');
+					}
+		        }
 			});
 		});
 	</script>

@@ -103,8 +103,16 @@ if (!defined('DIR_APP'))
 			'swf'      : 'js/uploadify/uploadify.swf',
 			'uploader' : 'uploadify.php',
 			'onUploadSuccess' : function(file, data, response) {
-	            alert('Upload thành công');
-	            window.location = location.href;
+				var temp = 0;
+				$('#file_upload-queue .uploadify-queue-item .data').each(function(){
+					if($(this).html() == ' - Complete')
+						temp ++;
+				});
+				if(temp == $('.uploadify-queue-item').length){
+					alert('Upload thành công');
+	            	window.location = location.href;
+				}
+
 	        }
 		});
 	});

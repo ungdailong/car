@@ -33,6 +33,7 @@ class Xequasudung extends CI_Controller {
 	}
 	public function chitiet($id){
 		if(intval($id) > 0){
+			$GLOBALS['slide'] = $this -> slidemodel -> getByRecordId('car',$id);
 			$category = $this -> categorymodel -> getCategory();
 			foreach ($category as $index => $value){
 				$data[$value['parent_id']][] = $value;

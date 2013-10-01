@@ -58,9 +58,9 @@
 
               <!--  <h1 class="titleALl"><?php echo $car -> intro?></h1>-->
               <div><?php echo $car -> intro?></div>
-              <div><?php echo $car -> content?></div>
+              <div><?php echo stripslashes($car -> content)?></div>
               <h2>Thông số kĩ thuật</h2>
-              <div><?php echo $car -> thongso_kithuat?></div>
+              <div><?php echo stripslashes($car -> thongso_kithuat)?></div>
               <div class="detailTS"><img src="images/pic/pic_thongso.jpg" /></div>
 
             </div>

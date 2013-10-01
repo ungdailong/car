@@ -18,7 +18,7 @@
                     <th><strong>Danh mục</strong></th>
           			<th><strong>Hình</strong></th>
                     <th><strong>Ngày tạo</strong></th>
-                    <th><strong>Trang chủ</strong></th>
+
                     <th><strong>Publish</strong></th>
                     <th colspan="2" width="120px" >Action</th>
                     <th>ID</th>
@@ -50,16 +50,7 @@
 						<td><?php echo $category[$row['category_tu_van_id']]['name']?></td>
                         <td><img src="<?php echo $uri_small; ?>" width="80px" /></td>
                         <td><?php echo $create_date; ?></td>
-                        <td>
-							<?php if($_SESSION['admin_group_id']==1){ ?>
-								<?php if($homepageshow=='1') $icon_pub="Publish"; else $icon_pub="Unpublish";  ?>
-                                    <a href="<?php echo $mod->url('index.php?p='.$_GET['p'])?>/homepageshow/<?=$id?>">
-                                    <img src="images/<?=$icon_pub?>.png" title="<?=$icon_pub?>" /></a>
-                            <?php }else{?>
-                                    <?php if($homepageshow=='1') $icon_pub="Publish"; else $icon_pub="Unpublish";  ?>
-                                    <img src="images/<?=$icon_pub?>.png" title="<?=$icon_pub?>" />
-                            <?php }?>
-                        </td>
+
                         <td>
 							<?php if($_SESSION['admin_group_id']==1){ ?>
 								<?php if($display=='1') $icon_pub="Unpublish"; else $icon_pub="Publish";  ?>

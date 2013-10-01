@@ -112,8 +112,15 @@ function remove_slide(slideid,title)
 				})
 	        },
 			'onUploadSuccess' : function(file, data, response) {
+				var temp = 0;
+				$('#file_upload-queue .uploadify-queue-item .data').each(function(){
+					if($(this).html() == ' - Complete')
+						temp ++;
+				});
 				$('#p-button-image').hide();
-	            alert('Upload thành công,hãy Save lại để thấy thay đổi');
+				if(temp == $('.uploadify-queue-item').length){
+					alert('Upload thành công,hãy Save lại để thấy thay đổi');
+				}
 	        }
 		});
 

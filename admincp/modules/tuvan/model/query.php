@@ -18,7 +18,6 @@ class ModelTuvan {
 			content='" . $content . "' ,
 			hinh='" . $image_title . "' ,
 			date_create=".time().",
-			trang_chu=" . $trang_chu . ",
 			hide=".$hide;
 
 
@@ -39,7 +38,6 @@ class ModelTuvan {
 			intro='" . $intro . "',
 			content='" . $content . "' ,
 			date_create=".time().",
-			trang_chu=" . $trang_chu . ",
 			hide=".$hide."
 			where id='" . $id . "'";
 		}
@@ -51,7 +49,6 @@ class ModelTuvan {
 			content='" . $content . "' ,
 			hinh='" . $image_title . "' ,
 			date_create=".time().",
-			trang_chu=" . $trang_chu . ",
 			hide=".$hide."
 			where id='" . $id . "'";
 		}
