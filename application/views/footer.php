@@ -59,5 +59,41 @@
 
 	</div>
 </div>
+<script>
+	$(function(){
+		$('.fromDH .bnt:eq(0)').click(function(){
+			$('.fromDH .inpDH').val('');
+			$('.fromDH textarea').val('');
+		})
+		$('.fromDH .bnt:eq(1)').click(function(){
+			var name = $('#name').val();
+			var email = $('#email').val();
+			var mobile = $('#mobile').val();
+			var content = $('#content').val();
+			var require = $('#require').val();
+			if(name == '' || email == '' || mobile == ''){
+				alert("Vui lòng nhập đủ thông tin");
+				return false;
+			}
+			else{
+				$.ajax({
+					url : "",
+					type : "POST",
+					data :{
+						name : name,
+						email : email,
+						mobile : mobile,
+						content : content,
+						require : require
+						},
+					success : function(){
+						alert("Đăng kí thành công. Cảm ơn bạn");
+						window.location.href = '';
+					}
+				})
+			}
+		})
+	});
+</script>
 </body>
 </html>
