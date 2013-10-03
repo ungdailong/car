@@ -1,16 +1,16 @@
-<?php if(!defined('DIR_APP')) die('Your have not permission'); 
+<?php if(!defined('DIR_APP')) die('Your have not permission');
 
 class Home extends Module {
 
 	function __construct() {
-		global $db, $mod;		
-		
+		global $db, $mod;
+
 	}
 
-	function index(){			
-		$this->redirect('index.php?p=tintuc');	
+	function index(){
+		$this->redirect('index.php?p=car');
 	}
-	
+
 }
 
 ?>

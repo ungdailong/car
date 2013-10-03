@@ -22,36 +22,10 @@
 
               <div class="colR">
               		<h4 class="price">Giá: <?php echo number_format(intval($car -> price),0,'','.')?> VNĐ</h4>
-                  <div class="ptl alr"><a id="various1" href="#inline1" class="bnt">đăng ký</a></div>
+                  <div class="ptl alr"><a id="various1" href="#dk_laithu" class="bnt">đăng ký</a></div>
               </div>
 
-               <!-- popup -->
-              <div style="display: none;">
-                    <div id="inline1" class="boxForm">
 
-                        <div class="fromDH">
-
-                            <h1 class="titleBar">Form Đăng Ký</h1>
-                            <div class="colLD">
-                                <label>Họ & Tên <span class="blue">*</span>:</label> <input type="text" class="inpDH" /><br />
-                                <label>Địa chỉ email:</label> <input type="text" class="inpDH" /><br />
-                                <label>Số điện thoại: <span class="blue">*</span>:</label> <input type="text" class="inpDH" /><br />
-
-                            </div>
-                            <div class="colRD">
-                            		<label>Yêu cầu: <span class="blue">*</span>:</label> <select class="inpDH2"><option></option></select><br />
-                                <label>Nội dung:  <span class="blue">*</span>:</label>  <textarea class="areaDH"></textarea><br />
-
-
-                                <div class="ptl alr"><input type="submit" value="Xoá" class="bnt" /> <input type="submit" value="Đặt hàng" class="bnt" /></div>
-                            </div>
-                            <div class="clr"></div>
-
-                        </div>
-
-                    </div>
-                </div>
-              <!-- en popup -->
 
 
               <div class="clr pvm"></div>
@@ -69,5 +43,37 @@
         <!-- en main right -->
 
         <div class="clr"></div>
-
+<script>
+	$(function(){
+		$('.fromDH .bnt:eq(0)').click(function(){
+			$('.fromDH .inpDH').val('');
+			$('.fromDH textarea').val('');
+		});
+		$('.fromDH .bnt:eq(1)').click(function(){
+			var name = $('#name').val();
+			var email = $('#email').val();
+			var mobile = $('#mobile').val();
+			var content = $('#content').val();
+			var require = $('#require').val();
+			if(name == '' || email == '' || mobile == '')
+				alert("Vui lòng nhập đầy đủ thông tin");
+			else
+				$.ajax({
+					url: "",
+					type : "POST",
+					data: {
+						name : name,
+						email : email,
+						mobile : mobile,
+						content : content,
+						require : require
+						},
+					success:function(result){
+						alert("Đăng kí thành công. Xin cảm ơn bạn");
+						window.location.href = '';
+					}
+				});
+		});
+	});
+</script>
   <?php $this -> load -> view ('footer')?>

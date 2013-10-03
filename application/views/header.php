@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>:::: MERCEDES Ho Chi Minh ::::</title>
+<title>:::: <?php echo $_SESSION['title']?> ::::</title>
 <link href="<?php echo CSS_DIR?>setup.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo CSS_DIR?>style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="<?php echo JS_DIR?>jquery.min.js"></script>
@@ -41,11 +41,11 @@ $(function(){
     	 <a href="<?php echo WEB_ROOT?>" class="logo"><img src="<?php echo IMG_DIR?>logo.png" /></a>
         <div id="smoothmenu1" class="ddsmoothmenu">
             <ul>
-                <li><a href="<?php echo WEB_ROOT?>/xe-moi"><span>Xe Mới</span></a></li>
-                <li><a href="<?php echo WEB_ROOT?>/khuyen-mai"><span>Khuyến Mãi</span></a></li>
-                <li><a href="<?php echo WEB_ROOT?>/tin-tuc"><span>Tin Tức & Sự Kiện</span></a></li>
-                <li><a href="<?php echo WEB_ROOT?>/xe-qua-su-dung"><span>Xe Đã Qua Sử Dụng</span></a></li>
-                <li><a href="<?php echo WEB_ROOT?>/tu-van"><span>Tư Vấn</span></a>
+                <li><a <?php if($_SESSION['path'] == 'xemoi') echo "style='color:#0094FD'"?>href="<?php echo WEB_ROOT?>/xe-moi"><span>Xe Mới</span></a></li>
+                <li><a <?php if($_SESSION['path'] == 'khuyenmai') echo "style='color:#0094FD'"?>href="<?php echo WEB_ROOT?>/khuyen-mai"><span>Khuyến Mãi</span></a></li>
+                <li><a <?php if($_SESSION['path'] == 'tintuc') echo "style='color:#0094FD'"?>href="<?php echo WEB_ROOT?>/tin-tuc"><span>Tin Tức & Sự Kiện</span></a></li>
+                <li><a <?php if($_SESSION['path'] == 'xequasudung') echo "style='color:#0094FD'"?>href="<?php echo WEB_ROOT?>/xe-qua-su-dung"><span>Xe Đã Qua Sử Dụng</span></a></li>
+                <li><a <?php if($_SESSION['path'] == 'tuvan') echo "style='color:#0094FD'"?>href="<?php echo WEB_ROOT?>/tu-van"><span>Tư Vấn</span></a>
                 	<ul>
                 		<?php foreach ($GLOBALS['category_tuvan'] as $index => $one){?>
                       	<li><a href="<?php echo WEB_ROOT.'/tu-van/'.$one['uri']?>"><?php echo $one['name']?></a></li>

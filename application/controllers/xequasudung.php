@@ -6,7 +6,7 @@ class Xequasudung extends CI_Controller {
 		$this -> load -> model('categorymodel');
 		$this -> load -> model('xemoimodel');
 		$this -> load -> library('tool');
-		$_SESSION['path'] = 'gioithieu';
+		$_SESSION['path'] = 'xequasudung';
 	}
 	public function index($page = 1)
 	{
@@ -33,17 +33,22 @@ class Xequasudung extends CI_Controller {
 	}
 	public function chitiet($id){
 		if(intval($id) > 0){
-			$GLOBALS['slide'] = $this -> slidemodel -> getByRecordId('car',$id);
-			$category = $this -> categorymodel -> getCategory();
-			foreach ($category as $index => $value){
-				$data[$value['parent_id']][] = $value;
-			}
-			$data['category'] = $data;
+			if($_POST){
+				$this -> tintuctrangchumodel -> insertSubcribe($id);
+			}else{
+				$GLOBALS['slide'] = $this -> slidemodel -> getByRecordId('car',$id);
+				$category = $this -> categorymodel -> getCategory();
+				foreach ($category as $index => $value){
+					$data[$value['parent_id']][] = $value;
+				}
+				$data['category'] = $data;
 
-			$data['car'] = $this -> xemoimodel -> getXeById($id);
-			//print_r($data['car']);die();
-			$data['path'] = '/xe-qua-su-dung/';
-			$this->load->view('xemoi_chitiet',$data);
+				$data['car'] = $this -> xemoimodel -> getXeById($id);
+				$_SESSION['title'] = $data['car'] -> name;
+				//print_r($data['car']);die();
+				$data['path'] = '/xe-qua-su-dung/';
+				$this->load->view('xemoi_chitiet',$data);
+			}
 		}
 	}
 	public function typeCar($type,$subtype,$page = 1){

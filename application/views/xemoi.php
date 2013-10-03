@@ -16,7 +16,7 @@
            			$uri_image = UPLOAD_IMG_DIR.'cars/small_'.$one['hinh'];
            		?>
             	<li>
-				<h4><?php echo $one['name']?></h4>
+				<h4><a style = 'color:blue' href = "<?php echo WEB_ROOT?>/xe-moi/chi-tiet/<?php echo $one['id']?>"><?php echo $one['name']?></a></h4>
 				<a class="popper" data-popbox="pop<?php echo $index?>"><img  src="<?php echo $uri_image?>" /></a>
 				<p><?php echo $one['intro']?></p>
 				<div class="alr fixed">

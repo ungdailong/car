@@ -4,7 +4,7 @@ class Khuyenmai extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this -> load -> model('khuyenmaimodel');
-		$_SESSION['path'] = 'gioithieu';
+		$_SESSION['path'] = 'khuyenmai';
 	}
 	public function index()
 	{

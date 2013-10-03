@@ -45,7 +45,7 @@ class ModelCategory {
     function delete($data = array()) {
 
         foreach ($data as $id) {
-            $row = $this->row('select * from #__category where caid = ' . $id . '');
+            //$row = $this->row('select * from #__category where caid = ' . $id . '');
 
             $sql = "delete from #__category where caid = '" . $id . "'";
 

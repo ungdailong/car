@@ -22,5 +22,42 @@
 </div>
 <!-- en footer -->
 </div>
+<div style="display: none;">
+	<div class="boxForm" id="dk_laithu">
+		<div class="fromDH">
+
+			<h1 class="titleBar">Form Đăng Ký</h1>
+			<div class="colLD">
+				<label>Họ &amp; Tên <span class="blue">*</span>:
+				</label> <input type="text" id = "name"class="inpDH"><br> <label>Địa chỉ email <span class="blue">*</span>:</label>
+				<input type="text" class="inpDH" id="email"><br> <label>Số điện thoại: <span
+					class="blue">*</span>:
+				</label> <input type="text" class="inpDH" id="mobile"><br>
+
+			</div>
+			<div class="colRD">
+				<label>Yêu cầu :</label>
+				<select class="inpDH2" id="require">
+					<option value="1">Đăng ký lái thử</option>
+					<option value="2">Bảng giá</option>
+					<option value="3">Yêu cầu Catalogue</option>
+				</select><br>
+				<label>Nội dung: <span class="blue"></span>:
+				</label>
+				<textarea class="areaDH" id="content"></textarea>
+				<br>
+
+
+				<div class="ptl alr">
+					<input type="button" class="bnt" value="Xoá"> <input type="submit"
+						class="bnt" value="Gửi">
+				</div>
+			</div>
+			<div class="clr"></div>
+
+		</div>
+
+	</div>
+</div>
 </body>
 </html>

@@ -15,7 +15,7 @@
         <div class="sidenav"><!-- Sidenav -->
 
             <?php
-            $css1 = $css2 = $css3 = $css4 = $css5 = $css6 = $css7 = $css8 = $css9 = $css10 = $css11 = "";
+            $css1 = $css2 = $css3 = $css4 = $css5 = $css6 = $css7 = $css8 = $css9 = $css10 = $css11 = $css12 = "";
 
             switch (@$_GET['p']) {
                 case "category": $css1 = "class='active'";
@@ -40,6 +40,8 @@
                     break;
                 case "tuvan": $css11 = "class='active'";
                     break;
+                case "subcribe": $css12 = "class='active'";
+                    break;
                 default : $css1 = "class='active'";
                     break;
             }
@@ -56,7 +58,7 @@
                     <li><a <?php echo $css11; ?> href="<?php echo $mod->url('index.php?p=tuvan'); ?>" title="">Tư vấn</a></li>
                     <li><a <?php echo $css7; ?> href="<?php echo $mod->url('index.php?p=slider'); ?>" title="">Slide</a></li>
                     <li><a <?php echo $css8; ?> href="<?php echo $mod->url('index.php?p=contact'); ?>" title="">Liên hệ</a></li>
-
+					<li><a <?php echo $css12; ?> href="<?php echo $mod->url('index.php?p=subcribe'); ?>" title="">Đăng ký</a></li>
                 </ul>
             </div>
             <div class="navhead"><span>Admin</span><span class="navbullet"></span></div>

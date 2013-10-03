@@ -10,9 +10,14 @@ class Home extends CI_Controller {
 	}
 	public function index()
 	{
-		$data['tintuc'] = $this -> tintucmodel -> getTinByNum(2);
-		$data['tintuc_trangchu'] = $this -> tintuctrangchumodel -> getAll();
-		$data['header_title'] = 'Chào mừng đến với Century - Trang chủ';
-		$this->load->view('index',$data);
+		if($_POST){
+			$this -> tintuctrangchumodel -> insertSubcribe();
+		}
+		else {
+			$data['tintuc'] = $this -> tintucmodel -> getTinByNum(2);
+			$data['tintuc_trangchu'] = $this -> tintuctrangchumodel -> getAll();
+			$data['header_title'] = 'Chào mừng đến với Century - Trang chủ';
+			$this->load->view('index',$data);
+		}
 	}
 }

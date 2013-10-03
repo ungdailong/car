@@ -46,7 +46,7 @@ class Category_tuvan extends Module {
         if (empty($_POST['id'])) {
             $_SESSION['message'] = LANG_CHOOSE_ID;
         } else {
-            if (ModelCategory::delete($_POST['id'])) {
+            if (ModelCategoryTuvan::delete($_POST['id'])) {
                 $_SESSION['message'] = LANG_DELETE_SUCCESS;
             } else {
                 $_SESSION['message'] = LANG_DELETE_SUCCESS;

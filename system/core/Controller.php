@@ -57,6 +57,7 @@ class CI_Controller {
 		$this -> load -> model('tuvanmodel');
 		$GLOBALS['category_tuvan'] = $this -> tuvanmodel -> getCategory();
 		define('PAGE_SIZE', 20);
+		$_SESSION['title'] = 'MERCEDES - Ho Chi Minh';
 		log_message('debug', "Controller Class Initialized");
 	}
 
