@@ -10,7 +10,7 @@ class Xequasudung extends CI_Controller {
 	}
 	public function index($page = 1)
 	{
-		$GLOBALS['slide'] = $this -> slidemodel -> getByTypeLimit('category',4);
+		//$GLOBALS['slide'] = $this -> slidemodel -> getByTypeLimit('category',4);
 		$pagesize = 5;
 		$category = $this -> categorymodel -> getCategory();
 		foreach ($category as $index => $value){
@@ -80,7 +80,8 @@ class Xequasudung extends CI_Controller {
 			}
 
 			$data['cars'] = $this -> xemoimodel -> getXeByCategoryId($category_id,$offset,$pagesize,'Xe đã sử dụng');
-			$num = $this -> xemoimodel -> countCarsByCategory($category_id);
+			$num = $this -> xemoimodel -> countCarsByCategory($category_id,'Xe đã sử dụng');
+			/*
 			if($subtype == 'null'){
 				$slides = $this -> slidemodel -> getByCategory('category',$getCategoryByUri -> caid);
 				if(count($slides) > 0)
@@ -95,6 +96,7 @@ class Xequasudung extends CI_Controller {
 				else
 					$GLOBALS['slide'] = $this -> slidemodel -> getByTypeLimit('category',4);
 			}
+			*/
 			if($num > $pagesize) {
 				if($subtype == 'null')
 					$curpage = 'xe-qua-su-dung/'.$type;
@@ -106,5 +108,11 @@ class Xequasudung extends CI_Controller {
 			$data['path'] = '/xe-qua-su-dung/';
 			$this->load->view('xemoi',$data);
 		}
+	}
+	public function provenExclusivity(){
+		$this -> load -> model('provenexclusivitymodel');
+		$data['data'] = $this -> provenexclusivitymodel ->getByRecordId(1);
+		$data['path'] = '/xe-qua-su-dung/';
+		$this->load->view('provenexclusivity',$data);
 	}
 }

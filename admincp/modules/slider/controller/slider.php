@@ -23,7 +23,7 @@ class slider extends Module {
 			}
 		}
 
-		$sql = "select * from #__slide order by id asc";
+		$sql = "select * from #__slide where type = 'header' order by id asc";
 
 		$query = $sql;
 

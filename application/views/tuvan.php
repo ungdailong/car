@@ -1,7 +1,7 @@
 <?php $this -> load -> view ('header')?>
 <div class="pageAll">
 
-        	<h1 class="titleALl">Tư vấn</h1>
+        	<h1 class="titleALl"><?php echo $_SESSION['title']?></h1>
 
            <div class="listNews">
            	<ul>
@@ -13,7 +13,7 @@
             		<li>
                   	<b><?php echo $date ?><i><?php echo $month ?></i></b>
                       <img src="<?php echo $url_image?>" />
-                      <h4><?php echo $one['title']?></h4>
+                      <h4><a style= 'color:black' href="<?php echo WEB_ROOT?>/tu-van/chi-tiet/<?php echo $one['id']?>"><?php echo $one['title']?></a></h4>
                       <p><?php echo $one['intro']?></p>
                       <div class="alr"><a href="<?php echo WEB_ROOT?>/tu-van/chi-tiet/<?php echo $one['id']?>" class="bnt">Xem thêm</a></div>
                   </li>

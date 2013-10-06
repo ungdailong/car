@@ -57,6 +57,7 @@ $route['xe-qua-su-dung'] = "xequasudung";
 $route['xe-qua-su-dung/(:num)'] = "xequasudung/index/$1";
 $route['xe-qua-su-dung/chi-tiet/(:num)'] = "xequasudung/chitiet/$1";
 
+$route['xe-qua-su-dung/proven-exclusivity'] = "xequasudung/provenExclusivity";
 $route['xe-qua-su-dung/(:any)/(:any)/(:num)'] = "xequasudung/typeCar/$1/$2/$3";
 $route['xe-qua-su-dung/(:any)/(:num)'] = "xequasudung/typeCar/$1/null/$2";
 $route['xe-qua-su-dung/(:any)/(:any)'] = "xequasudung/typeCar/$1/$2/1";

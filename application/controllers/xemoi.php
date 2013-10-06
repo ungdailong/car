@@ -11,7 +11,7 @@ class Xemoi extends CI_Controller {
 	}
 	public function index($page = 1)
 	{
-		$GLOBALS['slide'] = $this -> slidemodel -> getByTypeLimit('category',4);
+		//$GLOBALS['slide'] = $this -> slidemodel -> getByTypeLimit('category',4);
 		$pagesize = 5;
 		$category = $this -> categorymodel -> getCategory();
 		foreach ($category as $index => $value){
@@ -80,7 +80,8 @@ class Xemoi extends CI_Controller {
 				}
 
 				$data['cars'] = $this -> xemoimodel -> getXeByCategoryId($category_id,$offset,$pagesize,'Xe mới');
-				$num = $this -> xemoimodel -> countCarsByCategory($category_id);
+				$num = $this -> xemoimodel -> countCarsByCategory($category_id,'Xe mới');
+				/*
 				if($subtype == 'null'){
 					$slides = $this -> slidemodel -> getByCategory('category',$getCategoryByUri -> caid);
 					if(count($slides) > 0)
@@ -95,6 +96,7 @@ class Xemoi extends CI_Controller {
 					else
 						$GLOBALS['slide'] = $this -> slidemodel -> getByTypeLimit('category',4);
 				}
+				*/
 				if($num > $pagesize) {
 					if($subtype == 'null')
 						$curpage = 'xe-moi/'.$type;

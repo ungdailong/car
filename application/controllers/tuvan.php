@@ -16,6 +16,7 @@ class Tuvan extends CI_Controller {
 		$num = $this -> tuvanmodel -> CountRecord();
 		if($num > $pagesize)
 			$data['pagination'] = Tool :: pagination($num,$pagesize,$page,'tu-van');
+		$_SESSION['title'] = 'Tư vấn';
 		$this->load->view('tuvan',$data);
 	}
 	public function chitiet($id){
@@ -35,6 +36,7 @@ class Tuvan extends CI_Controller {
 			$num = $this -> tuvanmodel -> CountRecordByType($category_tuvan_id);
 			if($num > $pagesize)
 				$data['pagination'] = Tool :: pagination($num,$pagesize,$page,'tu-van/'.$type);
+			$_SESSION['title'] = 'Tư vấn - '.$category_tuvan -> name;
 			$this->load->view('tuvan',$data);
 		}
 	}
